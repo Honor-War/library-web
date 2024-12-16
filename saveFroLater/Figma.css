@@ -1,0 +1,477 @@
+.desktop {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .desktop .overlap-wrapper {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 1080px;
+    width: 1920px;
+  }
+  
+  .desktop .overlap {
+    height: 994px;
+    left: 224px;
+    position: relative;
+    width: 1696px;
+  }
+  
+  .desktop .overlap-group {
+    height: 994px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1696px;
+  }
+  
+  .desktop .div {
+    height: 994px;
+    left: 817px;
+    position: absolute;
+    top: 0;
+    width: 879px;
+  }
+  
+  .desktop .navy-box {
+    background-color: #242c4c;
+    height: 994px;
+    left: 215px;
+    position: absolute;
+    top: 0;
+    width: 664px;
+  }
+  
+  .desktop .circles {
+    height: 478px;
+    left: 217px;
+    position: absolute;
+    top: 393px;
+    width: 534px;
+  }
+  
+  .desktop .overlap-group-2 {
+    height: 478px;
+    position: relative;
+  }
+  
+  .desktop .middle-circle {
+    background-color: #12182ea3;
+    border-radius: 156.55px/158.91px;
+    height: 318px;
+    left: 90px;
+    position: absolute;
+    top: 89px;
+    width: 313px;
+  }
+  
+  .desktop .outer-circle {
+    border: 2px dashed;
+    border-color: #dbc4c4;
+    border-radius: 247.09px/239px;
+    height: 478px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 494px;
+  }
+  
+  .desktop .inner-circle {
+    background-color: #dbc4c4;
+    border-radius: 108.16px/109.79px;
+    height: 220px;
+    left: 139px;
+    position: absolute;
+    top: 138px;
+    width: 216px;
+  }
+  
+  .desktop .bulb-circ {
+    background-color: #dbc4c4;
+    border-radius: 39.23px/41.12px;
+    height: 82px;
+    left: 356px;
+    position: absolute;
+    top: 14px;
+    width: 78px;
+  }
+  
+  .desktop .code-circ {
+    background-color: #dbc4c4;
+    border-radius: 39.23px/41.12px;
+    height: 82px;
+    left: 456px;
+    position: absolute;
+    top: 198px;
+    width: 78px;
+  }
+  
+  .desktop .growthcir {
+    background-color: #dbc4c4;
+    border-radius: 39.23px/41.12px;
+    height: 82px;
+    left: 356px;
+    position: absolute;
+    top: 379px;
+    width: 78px;
+  }
+  
+  .desktop .code {
+    height: 47px;
+    left: 467px;
+    object-fit: cover;
+    position: absolute;
+    top: 217px;
+    width: 56px;
+  }
+  
+  .desktop .idea-bulb {
+    height: 62px;
+    left: 367px;
+    object-fit: cover;
+    position: absolute;
+    top: 27px;
+    width: 56px;
+  }
+  
+  .desktop .growth {
+    height: 57px;
+    left: 367px;
+    object-fit: cover;
+    position: absolute;
+    top: 390px;
+    width: 56px;
+  }
+  
+  .desktop .girl {
+    background-color: #fdfbfb;
+    background-image: url(./images/girl.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 745px;
+    left: 0;
+    position: absolute;
+    top: 249px;
+    width: 506px;
+  }
+  
+  .desktop .group {
+    height: 60px;
+    left: 320px;
+    position: absolute;
+    top: 31px;
+    width: 434px;
+  }
+  
+  .desktop .connect {
+    height: 60px;
+    left: 244px;
+    position: absolute;
+    top: 0;
+    width: 192px;
+  }
+  
+  .desktop .div-wrapper {
+    background-color: #12152ef5;
+    border-radius: 39px;
+    height: 60px;
+    position: relative;
+    width: 190px;
+  }
+  
+  .desktop .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    height: 41px;
+    left: 13px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    width: 167px;
+  }
+  
+  .desktop .sign-up {
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 192px;
+  }
+  
+  .desktop .navbar {
+    height: 54px;
+    left: 0;
+    position: absolute;
+    top: 37px;
+    width: 920px;
+  }
+  
+  .desktop .pngwing {
+    height: 51px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 2px;
+    width: 50px;
+  }
+  
+  .desktop .text-wrapper-2 {
+    color: #000000;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 54px;
+    left: 318px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 90px;
+  }
+  
+  .desktop .text-wrapper-3 {
+    color: #000000;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 54px;
+    left: 458px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 119px;
+  }
+  
+  .desktop .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 54px;
+    left: 624px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 88px;
+  }
+  
+  .desktop .text-wrapper-5 {
+    color: #000000;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 54px;
+    left: 794px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 116px;
+  }
+  
+  .desktop .text-wrapper-6 {
+    color: #000000;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 54px;
+    left: 63px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 194px;
+  }
+  
+  .desktop .quotes {
+    height: 347px;
+    left: 0;
+    position: absolute;
+    top: 360px;
+    width: 636px;
+  }
+  
+  .desktop .overlap-2 {
+    height: 347px;
+    position: relative;
+    width: 634px;
+  }
+  
+  .desktop .explore-box {
+    height: 39px;
+    left: 0;
+    position: absolute;
+    top: 16px;
+    width: 387px;
+  }
+  
+  .desktop .text-wrapper-7 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    height: 39px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 385px;
+  }
+  
+  .desktop .pngtree-books-logo {
+    height: 71px;
+    left: 307px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 78px;
+  }
+  
+  .desktop .a-LIBRARY-IS-a {
+    color: #000000;
+    font-family: "JejuHallasan-Regular", Helvetica;
+    font-size: 64px;
+    font-weight: 400;
+    height: 277px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 70px;
+    width: 634px;
+  }
+  
+  .desktop .footer-books {
+    height: 146px;
+    left: 0;
+    position: absolute;
+    top: 828px;
+    width: 482px;
+  }
+  
+  .desktop .group-2 {
+    height: 146px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 385px;
+  }
+  
+  .desktop .book {
+    background-color: #dcc4c4;
+    border-radius: 12px;
+    height: 146px;
+    left: 277px;
+    position: absolute;
+    top: 0;
+    width: 108px;
+  }
+  
+  .desktop .img {
+    height: 127px;
+    left: 11px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    width: 88px;
+  }
+  
+  .desktop .book-wrapper {
+    background-color: #9f9c93;
+    border-radius: 12px;
+    height: 146px;
+    left: 139px;
+    position: absolute;
+    top: 0;
+    width: 108px;
+  }
+  
+  .desktop .book-2 {
+    height: 131px;
+    left: 10px;
+    object-fit: cover;
+    position: absolute;
+    top: 6px;
+    width: 85px;
+  }
+  
+  .desktop .overlap-group-wrapper {
+    height: 146px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 108px;
+  }
+  
+  .desktop .overlap-group-3 {
+    border-radius: 12px;
+    height: 146px;
+    position: relative;
+  }
+  
+  .desktop .book-3 {
+    height: 126px;
+    left: 9px;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    width: 92px;
+  }
+  
+  .desktop .rectangle {
+    background-color: #36285554;
+    border-radius: 12px;
+    height: 146px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 108px;
+  }
+  
+  .desktop .arrow {
+    height: 70px;
+    left: 409px;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 39px;
+    width: 73px;
+  }
+  
+  .desktop .overlap-3 {
+    height: 70px;
+    position: relative;
+  }
+  
+  .desktop .arrow-circle {
+    background-color: #dcc4c4;
+    border: 1px solid;
+    border-color: #000000;
+    border-radius: 34.93px/35.04px;
+    height: 70px;
+    left: 0;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 0;
+    width: 70px;
+  }
+  
+  .desktop .arrow-removebg {
+    height: 60px;
+    left: 3px;
+    mix-blend-mode: darken;
+    object-fit: cover;
+    position: absolute;
+    top: 5px;
+    width: 70px;
+  }
+  

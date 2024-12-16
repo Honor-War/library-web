@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.my-form {
+  width: 400px;
+  height: 30%;
+  margin-left:211px;
+  padding: 20px;
+  border: 1px solid #010101;
+  border-radius: 8px;
+    
+    
+  }
+  .my-formInfo {
+    
+      width: 400px;
+      height: 30%;
+      padding: 20px;
+      border: 1px solid #010101;
+      margin-left: 300px;
+      border-radius: 8px;
+      
+      
+    }
+  
+  .my-form input[type="text"],
+  .my-form input[type="email"],
+  .my-form textarea {
+    width: 100%;
+    padding: 10px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+    border: 1px solid #4b4747;
+    border-radius: 8px;
+    background-color: #dcbfc0;
+  }
+  
+  .my-form button {
+    background-color: #f1cccd;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: 1px solid #4b4747;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .my-form button:hover {
+    background-color: #eebbbd;
+   
+  }
+  .result-box {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .result-box h2 {
+    text-align: center;
+  }
+  
+  .result-content {
+    margin-top: 20px;
+  }
+  
+  .result-content p {
+    margin-bottom: 10px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+  background-color: #f3cacccb;
+ 
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding-top: 10px;
+     
+     }
+
+    .home-page {
+      
+        /* background: linear-gradient(to bottom right, #ACEFE1, #FABFC0); */
+        height: 100vh;
+        width: min-content;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 100px;
+    
+}
+
+.home-page h1 {
+  color: black;
+  font-size: 24px;
+}
+
+.button {
+  background-color: #eebbbd;
+  border: 2px solid black;
+  color: black;
+  padding: 5px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+  cursor: pointer;
+}
+/* ***************************FigmaForm css *************************** */
+
+/* details.css */
+
+.container {
+  display: flex;
+  width: 400px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.box {
+  background-color: #dcc4c4;
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.p2 {
+  font-weight: bold;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  
+}

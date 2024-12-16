@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+.desktop {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .overlap-wrapper {
+  background-color: #ffffff;
+  border: 1px none;
+  height: 100vh;
+  width: 100%;
+}
+
+.desktop .overlap {
+  height: 90vh;
+  left: 11.67%;
+  position: relative;
+  width: 88.33%;
+}
+
+.desktop .overlap-group {
+  height: 90vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.desktop .div {
+  height: 90vh;
+  left: 42.76%;
+  position: absolute;
+  top: 0;
+  width: 45.74%;
+}
+
+.desktop .navy-box {
+  background-color: #242c4c;
+  height: 87.5%;
+  left: 11.2%;
+  position: absolute;
+  top: 0;
+  width: 34.58%;
+}
+
+.desktop .circles {
+  height: 44.26%;
+  left: 11.3%;
+  position: absolute;
+  top: 30.56%;
+  width: 27.92%;
+}
+
+.desktop .overlap-group-2 {
+  height: 44.26%;
+  position: relative;
+}
+
+.desktop .middle-circle {
+  background-color: #12182ea3;
+  border-radius: 15.6% / 15.89%;
+  height: 50%;
+  left: 5%;
+  position: absolute;
+  top: 8.24%;
+  width: 16.35%;
+}
+
+.desktop .outer-circle {
+  border: 2px dashed;
+  border-color: #dbc4c4;
+  border-radius: 25.81% / 23.94%;
+  height: 44.26%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20.63%;
+}
+
+.desktop .inner-circle {
+  background-color: #dbc4c4;
+  border-radius: 23.24% / 24.1%;
+  height: 20.37%;
+  left: 8.1%;
+  position: absolute;
+  top: 13.24%;
+  width: 11.35%;
+}
+
+.desktop .bulb-circ {
+  background-color: #dbc4c4;
+  border-radius: 18.61% / 20.56%;
+  height: 7.59%;
+  left: 18.5%;
+  position: absolute;
+  top: 1.3%;
+  width: 4.07%;
+}
+
+.desktop .code-circ {
+  background-color: #dbc4c4;
+  border-radius: 18.61% / 20.56%;
+  height: 7.59%;
+  left: 23.67%;
+  position: absolute;
+  top: 18.33%;
+  width: 4.07%;
+}
+
+.desktop .growthcir {
+  background-color: #dbc4c4;
+  border-radius: 18.61% / 20.56%;
+  height: 7.59%;
+  left: 18.5%;
+  position: absolute;
+  top: 35%;
+  width: 4.07%;
+}
+
+.desktop .code {
+  height: 3.88%;
+  left: 24.31%;
+  object-fit: cover;
+  position: absolute;
+  top: 20.19%;
+  width: 2.92%;
+}
+
+.desktop .idea-bulb {
+  height: 4.45%;
+  left: 18.97%;
+  object-fit: cover;
+  position: absolute;
+  top: 2.51%;
+  width: 2.92%;
+}
+
+.desktop .growth {
+  height: 4.11%;
+  left: 18.97%;
+  object-fit: cover;
+  position: absolute;
+  top: 37.04%;
+  width: 2.92%;
+}
+
+.desktop .girl {
+  background-color: #fdfbfb;
+  background-image: url(./images/girl.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 68.98%;
+  left: 0;
+  position: absolute;
+  top: 16.67%;
+  width: 26.35%;
+}
+
+.desktop .group {
+  height: 7.5%;
+  left: 16.67%;
+  position: absolute;
+  top: 3.11%;
+  width: 24.58%;
+}
+
+.desktop .connect {
+  height: 7.5%;
+  left: 12.76%;
+  position: absolute;
+  margin-top: -1.67%;
+  top: 1.11%;
+  width: 10%;
+}
+
+.desktop .div-wrapper {
+  background-color: #12152ef5;
+  border-radius: 3.9%;
+  height: 7.5%;
+  position: relative;
+  width: 9.74%;
+}
+
+.desktop .text-wrapper {
+  color: #ffffff;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 1.67vw;
+  font-weight: 700;
+  height: 4.74%;
+  left: 0.68%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  padding-top: 3.33%;
+  width: 8.74%;
+}
+
+.desktop .sign-up {
+  height: 7.5%;
+  left: 0;
+  margin-top: -1.67%;
+  position: absolute;
+  top: 1.11%;
+  width: 10%;
+}
+
+.desktop .navbar {
+  height: 5.63%;
+  left: 0;
+  position: absolute;
+  top: 4.07%;
+  width: 48.33%;
+}
+
+.desktop .pngwing {
+  height: 5.31%;
+  left: 3.13%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 2.6%;
+}
+
+.desktop .text-wrapper-2 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.15vw;
+  font-weight: 700;
+  height: 5.63%;
+  left: 16.63%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 5.13%;
+}
+
+.desktop .text-wrapper-3 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.15vw;
+  font-weight: 700;
+  height: 5.63%;
+  left: 26.6%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 6.21%;
+}
+
+.desktop .text-wrapper-4 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.15vw;
+  font-weight: 700;
+  height: 5.63%;
+  left: 34.89%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 5.52%;
+}
+
+.desktop .text-wrapper-5 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.15vw;
+  font-weight: 700;
+  height: 5.63%;
+  left: 45.79%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 6.93%;
+}
+
+.desktop .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 2.15vw;
+  font-weight: 700;
+  height: 5.63%;
+  left: 3.5%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 10.2%;
+}
+
+.desktop .quotes {
+  height: 30.37%;
+  left: 0;
+  position: absolute;
+  top: 23.15%;
+  width: 32.17%;
+}
+
+.desktop .overlap-2 {
+  height: 30.37%;
+  position: relative;
+  width: 31.96%;
+}
+
+.desktop .explore-box {
+  height: 3.38%;
+  left: 0;
+  position: absolute;
+  top: 1.19%;
+  width: 16.15%;
+}
+
+.desktop .text-wrapper-7 {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 1.67vw;
+  font-weight: 400;
+  height: 3.38%;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 16.13%;
+}
+
+.desktop .pngtree-books-logo {
+  height: 6.65%;
+  left: 13.03%;
+  object-fit: cover;
+  position: absolute;
+  top: -0.59%;
+  width: 2.92%;
+}
+
+.desktop .a-LIBRARY-IS-a {
+  color: #000000;
+  font-family: 'Bagel Fat One', cursive;
+  font-size: 4.13vw;
+  font-weight: 200;
+  height: 27.37%;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 6.67%;
+  width: 31.96%;
+}
+
+.desktop .footer-books {
+  height: 16.67%;
+  left: 0;
+  position: absolute;
+  top: 66.57%;
+  width: 32.08%;
+}
+
+.desktop .group-2 {
+  height: 16.67%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 24.61%;
+}
+
+.desktop .book {
+  background-color: #dcc4c4;
+  border-radius: 1.2%;
+  height: 16.67%;
+  left: 50.37%;
+  position: absolute;
+  top: 0;
+  width: 3.5%;
+}
+
+.desktop .img {
+  height: 14.72%;
+  left: 2.17%;
+  object-fit: cover;
+  position: absolute;
+  top: 1.19%;
+  width: 3.08%;
+}
+
+.desktop .book-wrapper {
+  background-color: #9f9c93;
+  border-radius: 1.2%;
+  height: 16.67%;
+  left: 25.36%;
+  position: absolute;
+  top: 0;
+  width: 3.5%;
+}
+
+.desktop .book-2 {
+  height: 14.06%;
+  left: 1.83%;
+  object-fit: cover;
+  position: absolute;
+  top: 1.12%;
+  width: 2.92%;
+}
+
+.desktop .overlap-group-wrapper {
+  height: 16.67%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3.5%;
+}
+
+.desktop .overlap-group-3 {
+  border-radius: 1.2%;
+  height: 16.67%;
+  position: relative;
+}
+
+.desktop .book-3 {
+  height: 14.5%;
+  left: 1.63%;
+  object-fit: cover;
+  position: absolute;
+  top: 1.19%;
+  width: 3.23%;
+}
+
+.desktop .rectangle {
+  background-color: #36285554;
+  border-radius: 1.2%;
+  height: 16.67%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3.5%;
+}
+
+.desktop .arrow {
+  height: 8.24%;
+  left: 54.79%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 4.54%;
+  width: 4.39%;
+}
+
+.desktop .overlap-3 {
+  height: 8.24%;
+  position: relative;
+}
+
+.desktop .arrow-circle {
+  background-color: #dbc4c4;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 4.99% / 4.99%;
+  height: 8.24%;
+  left: 0;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 0;
+  width: 7.76%;
+}
+
+.desktop .arrow-removebg {
+  height: 7.06%;
+  left: 1.02%;
+  mix-blend-mode: darken;
+  object-fit: cover;
+  position: absolute;
+  top: 0.59%;
+  width: 7.76%;
+}

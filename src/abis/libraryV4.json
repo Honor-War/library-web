@@ -1,0 +1,253 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_bookId",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_bookName",
+				"type": "string"
+			}
+		],
+		"name": "Borrowed",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			}
+		],
+		"name": "BookCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_bookId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_bookName",
+				"type": "string"
+			}
+		],
+		"name": "Borrow",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bookSerial",
+				"type": "uint256"
+			}
+		],
+		"name": "GetDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "bookSerial",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "studentId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "studentName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bookId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bookName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lateFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "BorrowTime",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Library.Details",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "getSerial",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "bookSerial",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "studentId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "bookId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "bookName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lateFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "BorrowTime",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bookSerial",
+				"type": "uint256"
+			}
+		],
+		"name": "howMuchToPay",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_bookSerial",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_feeAmt",
+				"type": "uint256"
+			}
+		],
+		"name": "payFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+]
