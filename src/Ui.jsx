@@ -24,9 +24,9 @@ toast.configure()
 
  const Ui = () => {
 
-  useEffect(()=>{
-    toast.info("Customize your screen size for better experience")
-  },[])
+  // useEffect(()=>{
+  //   toast.info("Customize your screen size for better experience")
+  // },[])
   const [buttonText,setButtonText] = useState("Connect")
   console.log("Hello");
 
@@ -123,9 +123,9 @@ toast.configure()
               <button style = {{border:"none",background:"none"}} className="text-wrapper-2">Home</button>
               <button style = {{border:"none",background:"none"}}onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
               <button style = {{border:"none",background:"none"}}onClick={handleStore} className="text-wrapper-4">Store</button>
-              <button style = {{border:"none",background:"none"}}onClick={handleInfo} className="text-wrapper-5">Info</button>
+              {/* <button style = {{border:"none",background:"none"}}onClick={handleInfo} className="text-wrapper-5">Info</button> */}
               <a href="https://cosmoclaw.com/">
-              <button style = {{border:"none",background:"none"}} className="text-wrapper-6">Library Claw</button>
+              <button style = {{border:"none",background:"none"}} className="text-wrapper-6">W-Library </button>
 
               </a>
               

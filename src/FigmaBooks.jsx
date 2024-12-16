@@ -235,18 +235,18 @@ const FigmaBooks = () => {
           >
             Store
           </button>
-          <button
+          {/* <button
             style={{ border: "none", background: "none" }}
             onClick={handleInfo}
             className="text-wrapper-16"
           >
             Info
-          </button>
+          </button> */}
           <button
             style={{ border: "none", background: "none" }}
             className="text-wrapper-17"
           >
-            Library Claw
+            W-Library
           </button>
         </div>
       </div>

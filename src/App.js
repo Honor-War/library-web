@@ -14,10 +14,10 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/Borrow" element={<Form />} />
       <Route path="/MyBooks" element={<MyBooks />} />
-      <Route path="MyBooks/TransactionQr" element={<TransacQrForm />} />
+      {/* <Route path="MyBooks/TransactionQr" element={<TransacQrForm />} /> */}
       <Route path="/Book" element={<FigmaBook />} />
-      <Route path="/signUp" element={<SignUp />} />
-      <Route path="/info" element={<FigmaInfo />} />
+      {/* <Route path="/signUp" element={<SignUp />} />
+      <Route path="/info" element={<FigmaInfo />} /> */}
 
     </Routes>
   );

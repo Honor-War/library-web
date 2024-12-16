@@ -82,17 +82,10 @@ const FigmaBook = () => {
           </button>
           <button
             style={{ border: "none", background: "none" }}
-            onClick={handleContact}
-            className="text-wrapper-5"
-          >
-            Contact
-          </button>
-          <button
-            style={{ border: "none", background: "none" }}
             onClick={handleLibraryClaw}
             className="text-wrapper-6"
           >
-            Library Claw
+            W-Library
           </button>
         </div>
         <div className="overlap">
