@@ -1,99 +1,113 @@
 import React, { useEffect, useState } from "react";
 import "./Figma.css";
-import { GoogleBooksAPI } from "google-books-js";
 import logo from "./images/pngwing.png";
 import physics from "./images/physics.jpg";
 import searchLogo from "./images/search.png";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
 
 toast.configure();
+
+const _data = [{
+  volumeInfo: {
+    imageLinks: {
+      smallThumbnail: physics
+    },
+    title: "Atomic Habits",
+    authors: 'James Clear',
+    pageCount: 300,
+    publisher: "Sample Publisher",
+    description: "The life-changing million copy bestseller"
+  }
+}, {
+  volumeInfo: {
+    imageLinks: {
+      smallThumbnail: 'https://m.media-amazon.com/images/I/61BqxChoN2L._SY466_.jpg'
+    },
+    title: "Read People Like a Book",
+    authors: ' Patrick King ',
+    pageCount: 600,
+    publisher: "Paperback",
+    description: "How to be More Likable and Charismatic"
+  }
+}, {
+  volumeInfo: {
+    imageLinks: {
+      smallThumbnail: 'https://m.media-amazon.com/images/I/41JTDIpCZFL._SY445_SX342_.jpg'
+    },
+    title: "Never Split the Difference",
+    authors: 'Tahl Raz',
+    pageCount: 800,
+    publisher: "Business Negotiation Skills",
+    description: "Negotiating as if Your Life Depended on It"
+  }
+}]
 const FigmaBooks = () => {
-  const [img, setImg] = useState(physics);
-  const [title, setTitle] = useState("Applied Physics");
-  const [author, setAuthor] = useState("A.K JHA");
-  const [pages, setPages] = useState("506");
-  const [reviews, setReviews] = useState("NA");
-  const [plot, setPlot] = useState("Not Available");
   const [search, setSearch] = useState("");
-  const [id, setId] = useState("");
-  const [publisher, setPublisher] = useState("Narmada Publisher");
-  const [subTitle, setSubtitle] = useState("Subtitle Here");
+  const [data, setData] = useState(_data);
+  const [bookInfo, setBookInfo] = useState(data[0]);
+
 
   let navigate = useNavigate();
   const handleHome = () => navigate(`/`);
   const handleStore = () => navigate(`/MyBooks`);
   const handleBorrow = () =>
-    navigate(`/Borrow`, { state: { bookId: id, bookName: title } });
-  const handleInfo = () => navigate(`/info`);
-  const handlePayFee = () => navigate(`/MyBooks/TransactionQr`);
-  const handleRead = () =>
-    navigate(`/Book`, {
-      state: {
-        title: title,
-        author: author,
-        pages: pages,
-        reviews: reviews,
-        plot: plot,
-        id: id,
-        img: img,
-        publisher: publisher,
-        subTitle: subTitle,
-      },
-    });
+    navigate(`/Borrow`);
 
-  const [data, setData] = useState([]);
-  const api = new GoogleBooksAPI({
-    key: "AIzaSyCJH3VI8VhqeMJWUi3Sup1e_2gHWiux_BI",
-  });
+  const handleRead = async () => {
+    let url = bookInfo.volumeInfo.imageLinks.smallThumbnail;
+    try {
+      // 创建一个临时的 a 标签用于下载
+      const link = document.createElement('a');
 
-  async function fetchBooks() {
-    const books = await api.search({
-      filters: {
-        title: search,
-        maxResults: 2,
-      },
-    });
+      // 获取文件名 - 从 URL 中提取或使用默认名称
+      const fileName = url.split('/').pop() || 'book.pdf';
 
-    const data = books.items;
+      // 设置下载链接和文件名
+      link.href = url;
+      link.download = fileName;
+      link.target = '_blank';
+      // 添加到文档中并触发点击
+      document.body.appendChild(link);
+      link.click();
 
-    setData(data);
-    console.log("data", data);
-  }
+      // 清理 DOM
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('下载失败:', error);
+      // 可以添加错误提示
+    }
+  };
 
-  useEffect((_e) => {
-    // e.preventDefault()
-    setSearch(search);
 
-    console.log("search", search);
-  });
 
   const handleSearch = (evt) => {
-    if (evt.key === "Enter") {
-      fetchBooks();
-      console.log("Hello");
-      setSearch("");
-    }
+
+    setData(_data.filter(book => book.volumeInfo.title.toLowerCase().includes(search.toLowerCase())));
   };
 
   return (
     <div className="books">
-     
+
       <div className="div">
         <div className="overlap">
           <div className="overlap-group">
             <div className="booksbox" style={{ display: "grid" }}>
-              <div className=" Books" style={{ display: "inline-grid" }}>
+              <div className="Books" style={{ display: "inline-grid" }}>
                 <div className="scrollView">
                   <div class="grid-container">
                     {data?.map((book) => (
-                      <div key={book.id}>
-                        {/* {console.log(book.id)} */}
+                      <div key={book.id}
+                        className="grid-container-item"
+                        onClick={() => {
+                          setBookInfo(book);
 
+                        }}>
                         <div className="partialGrid">
                           <img
-                            className="grid-container"
+                            className="partialGrid"
                             src={
                               book.volumeInfo.imageLinks &&
                               book.volumeInfo.imageLinks.smallThumbnail
@@ -102,39 +116,9 @@ const FigmaBooks = () => {
                         </div>
 
                         <h3>
-                          Title <br /> {book.volumeInfo.title}
+                          Name : {book.volumeInfo.title}
                         </h3>
                         <h4>Author : {book.volumeInfo.authors}</h4>
-
-                        <button
-                          type="button"
-                          style={{
-                            background: "#f3cacccb",
-                            borderRadius: "5px",
-                            border: "3px solid black",
-                            top: "2px",
-                            fontWeight: "normal",
-                          }}
-                          onClick={() => {
-                            setId(book.id);
-                            setAuthor(book.volumeInfo.authors);
-
-                            setTitle(book.volumeInfo.title);
-                            setPages(book.volumeInfo.pageCount);
-                            setPublisher(book.volumeInfo.publisher);
-                            setSubtitle(book.volumeInfo.subTitle);
-                            console.log(book.volumeInfo.publisher);
-                            // setPdfLink()
-                            setReviews();
-                            setImg(
-                              book.volumeInfo.imageLinks &&
-                                book.volumeInfo.imageLinks.smallThumbnail
-                            );
-                            setPlot(book.volumeInfo.description);
-                          }}
-                        >
-                          <strong>Preview</strong>
-                        </button>
                       </div>
                       /*addes*/
                     ))}
@@ -144,7 +128,7 @@ const FigmaBooks = () => {
             </div>
             <div className="search">
               <div className="overlp-3">
-               
+
                 <input
                   className="text-wrapper-5"
                   placeholder="   Enter your book name here"
@@ -163,14 +147,14 @@ const FigmaBooks = () => {
           </div>
           <div className="about-book">
             <h1 className="h-1">About the Book</h1>
-            <img className="book-3" alt="Book" src={img} />
-            <div className="text-wrapper-6">{title}</div>
-            <div className="text-wrapper-7">{author}</div>
+            <img className="book-3" alt="Book" src={bookInfo.volumeInfo.imageLinks.smallThumbnail} />
+            <div className="text-wrapper-6">{bookInfo.volumeInfo.title}</div>
+            <div className="text-wrapper-7">{bookInfo.volumeInfo.authors}</div>
             <div className="review-box">
               <img className="line" alt="Line" src="line-2.svg" />
               <div className="page">
                 <div className="overlap-group-2">
-                  <div className="text-wrapper-8">{pages}</div>
+                  <div className="text-wrapper-8">{bookInfo.volumeInfo.pageCount}</div>
                   <div className="text-wrapper-9">pages</div>
                 </div>
               </div>
@@ -184,7 +168,7 @@ const FigmaBooks = () => {
             <div className="text-wrapper-10">Description</div>
             <p className="scrollDescription">
               <br />
-              {plot}
+              {bookInfo.volumeInfo.description}
             </p>
             <div className="connect">
               <div className="div-wrapper">
@@ -193,7 +177,7 @@ const FigmaBooks = () => {
                   onClick={handleRead}
                   className="text-wrapper-11"
                 >
-                  Read
+                  Down
                 </button>
               </div>
             </div>
@@ -210,7 +194,7 @@ const FigmaBooks = () => {
           </div>
         </div>
         <div className="overlap-group-wrapper">
-          
+
         </div>
         <div className="navbar">
           <img className="pngwing" alt="Pngwing" src={logo} />
@@ -249,6 +233,12 @@ const FigmaBooks = () => {
             W-Library
           </button>
         </div>
+
+      </div>
+      <div className="connectss">
+        <ConnectButton
+          connectText={'Connect Wallet'}
+        />
       </div>
     </div>
   );

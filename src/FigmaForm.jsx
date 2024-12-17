@@ -8,6 +8,8 @@ import { ethers } from "ethers";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CoverUpload from "./Coverupload.jsx";
+import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
+
 toast.configure();
 
 const FigmaForm = () => {
@@ -37,36 +39,7 @@ const FigmaForm = () => {
 
 
 
-  const ButtonText = async () => {
-    if (window.ethereum) {
-      const truncate = (text, startChars, endChars, maxLength) => {
-        if (text.length > maxLength) {
-          var start = text.substring(0, startChars);
-          var end = text.substring(text.length - endChars, text.length);
-          while (start.length + end.length < maxLength) {
-            start = start + ".";
-          }
-          return start + end;
-        }
-        return text;
-      };
 
-      try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const accounts = await provider.send("eth_requestAccounts", []);
-        const balance = await provider.getBalance(accounts[0]);
-        console.log("Balance", balance);
-        setButtonText(truncate(accounts[0], 4, 4, 11));
-      } catch (error) {
-        toast.error(` Install and Connect Metamask`);
-      }
-    } else {
-      // alert("Install metamask");
-      toast.warning(" Install and Connect Metamask", {
-        position: toast.POSITION.TOP_CENTER,
-      });
-    }
-  };
 
   let navigate = useNavigate();
 
@@ -89,7 +62,7 @@ const FigmaForm = () => {
     <div className="form">
       <div className="div">
         <div className="connect">
-          <div className="overlap-group">
+          {/* <div className="overlap-group">
             <button
               style={{ border: "none", background: "none" }}
               onClick={ButtonText}
@@ -97,7 +70,11 @@ const FigmaForm = () => {
             >
               {buttonText}
             </button>
-          </div>
+          </div> */}
+          <ConnectButton
+            connectText={'Connect Wallet'}
+          // connectedText={`Connected: ${formatAddress(currentAccount?.address)}`}
+          />
         </div>
         <div className="navbar">
           <img className="pngwing" alt="Pngwing" src={logo} />

@@ -14,36 +14,30 @@ import pngwing from './images/pngwing.png'
 
 import { Link, useNavigate } from "react-router-dom";
 import { ethers } from 'ethers';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { formatAddress } from '@mysten/sui.js/utils';
+import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
+ toast.configure()
 
-toast.configure()
+const Ui = () => {
+  const { currentAccount } = useWalletKit();
+  const [buttonText, setButtonText] = useState("Connect")
 
-
-
-
- const Ui = () => {
-
-  // useEffect(()=>{
-  //   toast.info("Customize your screen size for better experience")
-  // },[])
-  const [buttonText,setButtonText] = useState("Connect")
-  console.log("Hello");
-
-  const handleConnect = async()=>{
+  const handleConnect = async () => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
-    const accounts = await provider.send("eth_requestAccounts", []);
-    const balance = await provider.getBalance(accounts[0]);
-    setButtonText(truncate(accounts[0], 4, 4, 11));
+      const accounts = await provider.send("eth_requestAccounts", []);
+      const balance = await provider.getBalance(accounts[0]);
+      setButtonText(truncate(accounts[0], 4, 4, 11));
     } catch (error) {
-      toast.warning("Install and Connect Metamask",{
+      toast.warning("Install and Connect Metamask", {
         position: toast.POSITION.TOP_CENTER
       })
     }
-    
+
   }
-  
+
   const truncate = (text, startChars, endChars, maxLength) => {
     if (text.length > maxLength) {
       var start = text.substring(0, startChars)
@@ -60,32 +54,14 @@ toast.configure()
 
   let navigate = useNavigate();
 
-  const handleHome =()=>
-  {
-    let path = `/`
+  const handleBorrow = () => {
+    let path = `/Borrow`
     navigate(path);
   }
-  
-    const hadleSignUp =()=>{
-      // let path = `/signUp`
-      // navigate(path)
-      toast.info("No Need to signUp")
-
-    }
-    const handleInfo =()=>navigate(`/info`)
-    const handleBorrow =()=>{
-      let path = `/Borrow`
-      navigate(path);
-    }
-    const handleStore =()=>{
-      let path = `/MyBooks`
-      navigate(path);
-    }
-    const handlePayFee =()=>{
-      let path = "MyBooks/TransactionQr"
-      navigate(path);
-    }
-   
+  const handleStore = () => {
+    let path = `/MyBooks`
+    navigate(path);
+  }
 
   return (
     <div className="desktop">
@@ -102,33 +78,35 @@ toast.configure()
                   <div className="bulb-circ" />
                   <div className="code-circ" />
                   <div className="growthcir" />
-                  <img className="code" alt="Code" src={code}/>
+                  <img className="code" alt="Code" src={code} />
                   <img className="idea-bulb" alt="Idea bulb" src={ideabulb} />
-                  <img className="growth" alt="Growth" src={growth}/>
+                  <img className="growth" alt="Growth" src={growth} />
                 </div>
               </div>
               {/* <div className="girl" /> */}
               <div className="group">
-                
-                
+
+
                 <div className="connect">
-                  <div className="div-wrapper">
-                    <button style = {{border:"none",background:"none"}}onClick={handleConnect} className="text-wrapper">{buttonText}</button>
-                  </div>
+                    {/* <button style={{ border: "none", background: "none" }} onClick={handleConnect} className="text-wrapper">{buttonText}</button> */}
+                    <ConnectButton
+                      connectText={'Connect Wallet'}
+                      // connectedText={`Connected: ${formatAddress(currentAccount?.address)}`}
+                    />
                 </div>
               </div>
             </div>
             <div className="navbar">
               <img className="pngwing" alt="Pngwing" src={pngwing} />
-              <button style = {{border:"none",background:"none"}} className="text-wrapper-2">Home</button>
-              <button style = {{border:"none",background:"none"}}onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
-              <button style = {{border:"none",background:"none"}}onClick={handleStore} className="text-wrapper-4">Store</button>
+              <button style={{ border: "none", background: "none" }} className="text-wrapper-2">Home</button>
+              <button style={{ border: "none", background: "none" }} onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
+              <button style={{ border: "none", background: "none" }} onClick={handleStore} className="text-wrapper-4">Store</button>
               {/* <button style = {{border:"none",background:"none"}}onClick={handleInfo} className="text-wrapper-5">Info</button> */}
               <a href="https://cosmoclaw.com/">
-              <button style = {{border:"none",background:"none"}} className="text-wrapper-6">W-Library </button>
+                <button style={{ border: "none", background: "none" }} className="text-wrapper-6">W-Library </button>
 
               </a>
-              
+
             </div>
           </div>
           <div className="quotes">
@@ -148,24 +126,24 @@ toast.configure()
             <div className="group-2">
 
               <div className="book">
-                <img className="book-2" alt="Book" src={book2}/>
+                <img className="book-2" alt="Book" src={book2} />
               </div>
-              
+
 
               <div className="book-wrapper">
-                <img className="book-2" alt="Book" src={book5}/>
+                <img className="book-2" alt="Book" src={book5} />
               </div>
 
-              
+
 
               <div className="overlap-group-wrapper">
                 <div className="overlap-group-3">
-                  <img className="book-3" alt="Book" src={book3}/>
+                  <img className="book-3" alt="Book" src={book3} />
                   <div className="rectangle" />
                 </div>
               </div>
             </div>
-            <button style = {{border:"none",background:"none"}}onClick={handleStore} className="arrow">
+            <button style={{ border: "none", background: "none" }} onClick={handleStore} className="arrow">
               <div className="overlap-3">
                 <div className="arrow-circle" />
                 <img className="arrow-removebg" alt="Arrow removebg" src={arrow} />
