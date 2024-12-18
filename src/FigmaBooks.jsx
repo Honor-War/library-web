@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./Figma.css";
 import logo from "./images/pngwing.png";
 import physics from "./images/physics.jpg";
@@ -6,7 +6,11 @@ import searchLogo from "./images/search.png";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
+import { ConnectButton } from '@mysten/dapp-kit'
+import { getSubdomainAndPath, subdomainToObjectId } from './utils/blob.ts'
+import { gallery } from './contracts/index.ts'
+import { useCurrentAccount } from '@mysten/dapp-kit'
+import { CONTRACT_CONFIG } from './config/index.ts';
 
 toast.configure();
 
@@ -48,6 +52,7 @@ const FigmaBooks = () => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState(_data);
   const [bookInfo, setBookInfo] = useState(data[0]);
+  const account = useCurrentAccount();
 
 
   let navigate = useNavigate();
@@ -55,6 +60,50 @@ const FigmaBooks = () => {
   const handleStore = () => navigate(`/MyBooks`);
   const handleBorrow = () =>
     navigate(`/Borrow`);
+
+  const fetchDomainData = useCallback(async () => {
+    try {
+      // const url = window.location.origin;
+      // const parsedUrl = getSubdomainAndPath(url);
+      const parsedUrl = getSubdomainAndPath(`https://${CONTRACT_CONFIG.LIBRARY_ID}.walrus.site/`);
+      console.log(account, parsedUrl, 'parsedUrl');
+      if (!parsedUrl) return;
+      const objectId = subdomainToObjectId(parsedUrl.subdomain);
+      console.log(objectId, 'objectId');
+      if (!objectId) {
+        return;
+      } else {
+        if (account) {
+          const libraryData = await gallery.getLibrary(objectId);
+          console.log(libraryData);
+          const books = libraryData.blobs.map((blob) => {
+            return {
+              volumeInfo: {
+                imageLinks: {
+                  smallThumbnail: `https://aggregator.walrus-testnet.walrus.space/v1/${blob}`
+                },
+                title: blob.name,
+                authors: 'James Clear',
+                pageCount: 300,
+                publisher: "Sample Publisher",
+                description: "The life-changing million copy bestseller"
+              }
+            }
+          })
+          setData(books);
+
+
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, [account]);
+
+  useEffect(() => {
+    fetchDomainData();
+  }, [account]);
+
 
   const handleRead = async () => {
     let url = bookInfo.volumeInfo.imageLinks.smallThumbnail;
@@ -81,10 +130,7 @@ const FigmaBooks = () => {
     }
   };
 
-
-
   const handleSearch = (evt) => {
-
     setData(_data.filter(book => book.volumeInfo.title.toLowerCase().includes(search.toLowerCase())));
   };
 
@@ -94,41 +140,36 @@ const FigmaBooks = () => {
       <div className="div">
         <div className="overlap">
           <div className="overlap-group">
-            <div className="booksbox" style={{ display: "grid" }}>
-              <div className="Books" style={{ display: "inline-grid" }}>
-                <div className="scrollView">
-                  <div class="grid-container">
-                    {data?.map((book) => (
-                      <div key={book.id}
-                        className="grid-container-item"
-                        onClick={() => {
-                          setBookInfo(book);
+            <div className="booksbox" >
+              <div className="scrollView">
+                {data?.map((book, index) => (
+                  <div key={index}
+                    className="grid-container-item"
+                    onClick={() => {
+                      setBookInfo(book);
 
-                        }}>
-                        <div className="partialGrid">
-                          <img
-                            className="partialGrid"
-                            src={
-                              book.volumeInfo.imageLinks &&
-                              book.volumeInfo.imageLinks.smallThumbnail
-                            }
-                          />
-                        </div>
+                    }}>
+                    <div className="partialGrid">
+                      <img
+                        className="partialGrid"
+                        src={
+                          book.volumeInfo.imageLinks &&
+                          book.volumeInfo.imageLinks.smallThumbnail
+                        }
+                      />
+                    </div>
 
-                        <h3>
-                          Name : {book.volumeInfo.title}
-                        </h3>
-                        <h4>Author : {book.volumeInfo.authors}</h4>
-                      </div>
-                      /*addes*/
-                    ))}
+                    <h3>
+                      Name : {book.volumeInfo.title}
+                    </h3>
+                    <h4>Author : {book.volumeInfo.authors}</h4>
                   </div>
-                </div>
+                  /*addes*/
+                ))}
               </div>
             </div>
             <div className="search">
               <div className="overlp-3">
-
                 <input
                   className="text-wrapper-5"
                   placeholder="   Enter your book name here"
@@ -188,7 +229,7 @@ const FigmaBooks = () => {
                 onClick={handleBorrow}
                 className="text-wrapper-12"
               >
-                Borrow
+                Upload
               </button>
             </div>
           </div>
@@ -210,7 +251,7 @@ const FigmaBooks = () => {
             onClick={handleBorrow}
             className="text-wrapper-14"
           >
-            Borrow
+            Upload
           </button>
           <button
             style={{ border: "none", background: "none" }}

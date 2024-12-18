@@ -25,4 +25,8 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } = createNetwork
 // 创建全局 SuiClient 实例
 const suiClient = new SuiClient({ url: networkConfig[network].url });
 
+export const CONTRACT_CONFIG = {
+    LIBRARY_ID: 'h2stv6gnv2th5cti8j7223al9ak8xxnsvvacn9mgggdipz2kx'
+};
+
 export { useNetworkVariable, useNetworkVariables, networkConfig, network, suiClient };

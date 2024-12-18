@@ -1129,16 +1129,38 @@
   top: 0;
   width: 1098px;
   border-radius: 32px 0 0 32px;
+  padding-bottom: 20px;
+  
 }
 
 .books .booksbox {
-  background-image: url(./images/form.png);
-  background-size: 100% 100%;
+
   height: 725px;
   left: 20px;
   position: absolute;
   top: 103px;
   width: 973px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 32px;
+  border: 2px solid #000000;
+  
+  /* 隐藏滚动条但保持可以滚动 */
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Chrome, Safari 和 Opera 的滚动条隐藏 */
+.books .booksbox::-webkit-scrollbar {
+  display: none;
+}
+
+.books .scrollView {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 30px;
 }
 
 .books .overlap-2 {
@@ -2052,14 +2074,7 @@
   width: 894px;
 }
 
-.books .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-}
+
 
 .partialGrid{
   height: 400px;
@@ -2067,7 +2082,8 @@
 }
 
 .books .grid-container-item {
-  width: 300px;
+  width: 30%;
+  padding: 10px;
 }
 
 .books .grid-item {

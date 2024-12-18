@@ -1,8 +1,8 @@
 import { isValidSuiAddress } from "@mysten/sui/utils";
-import { suiClient } from "@/config";
+import { suiClient } from "../config/index.ts";
 import { SuiObjectResponse } from "@mysten/sui/client";
-import { categorizeSuiObjects, CategorizedObjects } from "@/utils/assetsHelpers";
-import * as gallery from "./gallery";
+import { categorizeSuiObjects, CategorizedObjects } from "../utils/assetsHelpers.ts";
+import * as gallery from "./gallery.ts";
 export const getUserProfile = async (address: string): Promise<CategorizedObjects> => {
   if (!isValidSuiAddress(address)) {
     throw new Error("Invalid Sui address");

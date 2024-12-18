@@ -17,11 +17,10 @@ import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { formatAddress } from '@mysten/sui.js/utils';
-import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
+import { ConnectButton } from '@mysten/dapp-kit'
  toast.configure()
 
 const Ui = () => {
-  const { currentAccount } = useWalletKit();
   const [buttonText, setButtonText] = useState("Connect")
 
   const handleConnect = async () => {
@@ -99,7 +98,7 @@ const Ui = () => {
             <div className="navbar">
               <img className="pngwing" alt="Pngwing" src={pngwing} />
               <button style={{ border: "none", background: "none" }} className="text-wrapper-2">Home</button>
-              <button style={{ border: "none", background: "none" }} onClick={handleBorrow} className="text-wrapper-3">Borrow</button>
+              <button style={{ border: "none", background: "none" }} onClick={handleBorrow} className="text-wrapper-3">Upload</button>
               <button style={{ border: "none", background: "none" }} onClick={handleStore} className="text-wrapper-4">Store</button>
               {/* <button style = {{border:"none",background:"none"}}onClick={handleInfo} className="text-wrapper-5">Info</button> */}
               <a href="https://cosmoclaw.com/">

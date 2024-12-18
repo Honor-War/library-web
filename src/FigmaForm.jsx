@@ -8,23 +8,19 @@ import { ethers } from "ethers";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CoverUpload from "./Coverupload.jsx";
-import { ConnectButton, useWalletKit } from '@mysten/wallet-kit';
+import { ConnectButton } from '@mysten/dapp-kit'
 
 toast.configure();
 
 const FigmaForm = () => {
 
-
-
   const location = useLocation();
   const values = location.state;
   const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
-
   const [studentName, setStudentName] = useState("");
 
   const [bookName, setBookName] = useState("");
-  const [buttonText, setButtonText] = useState("Connect");
 
 
   const handleSubmit = async (e) => {
@@ -90,7 +86,7 @@ const FigmaForm = () => {
             onClick={handleBorrow}
             className="text-wrapper-2"
           >
-            Borrow
+            Upload
           </button>
           <button
             style={{ border: "none", background: "none" }}

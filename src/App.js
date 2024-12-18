@@ -7,7 +7,6 @@ import MyBooks from "./FigmaBooks";
 import FigmaBook from "./FigmaBook";
 import FigmaInfo from "./FigmaInfo";
 import SignUp from "./SignUp";
-import { WalletKitProvider } from '@mysten/wallet-kit';
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SuiClientProvider, WalletProvider } from "@mysten/dapp-kit";
@@ -21,16 +20,12 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <SuiClientProvider networks={networkConfig} defaultNetwork={network}>
         <WalletProvider>
-          <WalletKitProvider>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Borrow" element={<Form />} />
               <Route path="/MyBooks" element={<MyBooks />} />
               <Route path="/Book" element={<FigmaBook />} />
-
             </Routes>
-
-          </WalletKitProvider>
         </WalletProvider>
       </SuiClientProvider>
     </QueryClientProvider>
