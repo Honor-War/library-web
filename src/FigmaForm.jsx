@@ -99,7 +99,7 @@ const FigmaForm = () => {
             style={{ border: "none", background: "none" }}
             className="text-wrapper-5"
           >
-            W-Library
+            WBook
           </button>
         </div>
         <div className="overlap">
@@ -114,7 +114,7 @@ const FigmaForm = () => {
                   <h1 className="h1" align="center">
                     <strong>Details</strong>
                   </h1>
-
+{/* 
                   <div>
                     <label htmlFor="User Name :">
                       <strong>User Name :</strong>{" "}
@@ -129,7 +129,7 @@ const FigmaForm = () => {
                       value={studentName}
                     />
                     <br />
-                  </div>
+                  </div> */}
 
                   <div>
                     <label htmlFor="Book Name :">
@@ -178,10 +178,10 @@ const FigmaForm = () => {
               </div>
               <div className="connect-wallet-2">
                 <div className="ellipse" />
-                <div className="text-wrapper-11">Borrow book</div>
+                <div className="text-wrapper-11">Upload book</div>
               </div>
               <div className="connect-wallet-3">
-                <p style={{ top: "-20px" }} className="text-wrapper-11">If someone downloads <br /> you will receive a certain fee</p>
+                <p style={{ top: "-20px" }} className="text-wrapper-11">If someone downloads <br /> you may receive a certain amount of bounty</p>
                 <div className="ellipse" />
               </div>
               <div className="ellipse-3" />

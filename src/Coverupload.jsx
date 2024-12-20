@@ -32,6 +32,7 @@ export default function CoverUpload() {
                 const blobInfo = await storeBlob(options.file)
                 console.log(blobInfo)
                 const libraryId = CONTRACT_CONFIG.LIBRARY_ID;
+                console.log(libraryId,'libraryId========')
                 // 2. 调用合约添加 blob
                 const tx = await addBlob(
                     networkVariables,
@@ -45,6 +46,7 @@ export default function CoverUpload() {
                     }
                 })
             } catch (error) {
+                console.log(error,'error==========')
                 toast.error("Error uploading file");
                 options.onError({ data: 'error' });
             }

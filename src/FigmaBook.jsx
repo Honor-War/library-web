@@ -85,7 +85,7 @@ const FigmaBook = () => {
             onClick={handleLibraryClaw}
             className="text-wrapper-6"
           >
-            W-Library
+            WBook
           </button>
         </div>
         <div className="overlap">

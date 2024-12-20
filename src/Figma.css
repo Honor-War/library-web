@@ -1129,7 +1129,6 @@
   top: 0;
   width: 1098px;
   border-radius: 32px 0 0 32px;
-  padding-bottom: 20px;
   
 }
 
@@ -1138,7 +1137,7 @@
   height: 725px;
   left: 20px;
   position: absolute;
-  top: 103px;
+  top: 96px;
   width: 973px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -2132,4 +2131,21 @@
 .books .download-btn:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+
+.button-group{
+
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+
+.button-group button{
+  background-color: #12152ef5;
+  color: #ffffff;
+  background-color: #12152ef5;
+  border-radius: 39px;
+  padding: 10px 20px;
+  border: none;
 }

@@ -41,7 +41,7 @@ const _data = [{
     imageLinks: {
       smallThumbnail: 'https://m.media-amazon.com/images/I/41JTDIpCZFL._SY445_SX342_.jpg'
     },
-    title: "Never Split the Difference",
+    title: "Tahl Raz",
     authors: 'Tahl Raz',
     pageCount: 800,
     publisher: "Business Negotiation Skills",
@@ -159,10 +159,9 @@ const FigmaBooks = () => {
                       />
                     </div>
 
-                    <h3>
-                      Name : {book.volumeInfo.title}
+                    <h3 style={{textAlign: 'center'}}>
+                      {book.volumeInfo.title}
                     </h3>
-                    <h4>Author : {book.volumeInfo.authors}</h4>
                   </div>
                   /*addes*/
                 ))}
@@ -211,27 +210,14 @@ const FigmaBooks = () => {
               <br />
               {bookInfo.volumeInfo.description}
             </p>
-            <div className="connect">
-              <div className="div-wrapper">
-                <button
-                  style={{ border: "none", background: "none" }}
-                  onClick={handleRead}
-                  className="text-wrapper-11"
-                >
-                  Down
-                </button>
-              </div>
+            
+            <div className="button-group">
+              <button>Download</button>
+              <button>Reward</button>
+              <button>thumbs-up</button>
+              <button>Press</button>
             </div>
-
-            <div className="div-wrapperBorrow">
-              <button
-                style={{ border: "none", background: "none" }}
-                onClick={handleBorrow}
-                className="text-wrapper-12"
-              >
-                Upload
-              </button>
-            </div>
+            
           </div>
         </div>
         <div className="overlap-group-wrapper">
@@ -271,7 +257,7 @@ const FigmaBooks = () => {
             style={{ border: "none", background: "none" }}
             className="text-wrapper-17"
           >
-            W-Library
+            WBook
           </button>
         </div>
 

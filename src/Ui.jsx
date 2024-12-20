@@ -102,7 +102,7 @@ const Ui = () => {
               <button style={{ border: "none", background: "none" }} onClick={handleStore} className="text-wrapper-4">Store</button>
               {/* <button style = {{border:"none",background:"none"}}onClick={handleInfo} className="text-wrapper-5">Info</button> */}
               <a href="https://cosmoclaw.com/">
-                <button style={{ border: "none", background: "none" }} className="text-wrapper-6">W-Library </button>
+                <button style={{ border: "none", background: "none" }} className="text-wrapper-6">WBook </button>
 
               </a>
 
