@@ -26,7 +26,8 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } = createNetwork
 const suiClient = new SuiClient({ url: networkConfig[network].url });
 
 export const CONTRACT_CONFIG = {
-    LIBRARY_ID: 'h2stv6gnv2th5cti8j7223al9ak8xxnsvvacn9mgggdipz2kx'
+    LIBRARY_ID: "0x19c3953bcd6072d06cd1881999184b08f23c7abf0c47a0181acaeec941e59a9d",
+    objectId:'0x19c3953bcd6072d06cd1881999184b08f23c7abf0c47a0181acaeec941e59a9d'
 };
 
 export { useNetworkVariable, useNetworkVariables, networkConfig, network, suiClient };

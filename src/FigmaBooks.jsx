@@ -68,7 +68,7 @@ const FigmaBooks = () => {
       const parsedUrl = getSubdomainAndPath(`https://${CONTRACT_CONFIG.LIBRARY_ID}.walrus.site/`);
       console.log(account, parsedUrl, 'parsedUrl');
       if (!parsedUrl) return;
-      const objectId = subdomainToObjectId(parsedUrl.subdomain);
+      const objectId = CONTRACT_CONFIG.LIBRARY_ID || subdomainToObjectId(parsedUrl.subdomain);
       console.log(objectId, 'objectId');
       if (!objectId) {
         return;
@@ -159,7 +159,7 @@ const FigmaBooks = () => {
                       />
                     </div>
 
-                    <h3 style={{textAlign: 'center'}}>
+                    <h3 style={{ textAlign: 'center' }}>
                       {book.volumeInfo.title}
                     </h3>
                   </div>
@@ -210,14 +210,14 @@ const FigmaBooks = () => {
               <br />
               {bookInfo.volumeInfo.description}
             </p>
-            
+
             <div className="button-group">
               <button>Download</button>
               <button>Reward</button>
               <button>thumbs-up</button>
               <button>Press</button>
             </div>
-            
+
           </div>
         </div>
         <div className="overlap-group-wrapper">
